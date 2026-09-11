@@ -31,7 +31,7 @@
             "enable_hyperlink": true
           },
           "style": "powerline",
-          "template": " \uf07b\uea9c {{ $parts := splitList \"|||\" .Path }}{{ $count := len $parts }}{{ if le $count 4 }}{{ join \" <#b35900>\ue0b1</> \" $parts }}{{ else }}{{ index $parts 0 }} <#b35900>\ue0b1</> {{ index $parts 1 }} <#b35900>\ue0b1 \u2026{{ sub $count 3 }}\u2026 \ue0b1</> {{ last $parts }}{{ end }} ",
+          "template": " \uf07b\uea9c {{ $parts := splitList \"|||\" .Path }}{{ $count := len $parts }}{{ if le $count 4 }}{{ range $i, $p := $parts }}{{ if $i }} <#b35900>\ue0b1</> {{ end }}{{ $p }}{{ end }}{{ else }}{{ index $parts 0 }} <#b35900>\ue0b1</> {{ index $parts 1 }} <#b35900>\ue0b1 \u2026{{ sub $count 3 }}\u2026 \ue0b1</> {{ last $parts }}{{ end }} ",
           "type": "path"
         },
         {
